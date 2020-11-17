@@ -26,6 +26,18 @@ class BulletTextView : View {
             }
         }
 
+    var textSize = 600f
+        set(value) {
+            field = value
+            mPaint.textSize = value
+        }
+
+    var textColor = Color.WHITE
+        set(value) {
+            field = value
+            mPaint.color = value
+        }
+
     private val mPaint: Paint = Paint(Paint.ANTI_ALIAS_FLAG)
 
     private var dx = 0f
@@ -47,8 +59,8 @@ class BulletTextView : View {
     }
 
     private fun init() {
-        mPaint.color = Color.WHITE
-        mPaint.textSize = 600f
+        mPaint.color = textColor
+        mPaint.textSize = textSize
     }
 
     override fun onDraw(canvas: Canvas?) {

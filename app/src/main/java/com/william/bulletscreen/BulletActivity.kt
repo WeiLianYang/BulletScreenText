@@ -9,6 +9,7 @@ import android.view.View
 import android.view.animation.Animation
 import android.view.animation.LinearInterpolator
 import androidx.appcompat.app.AppCompatActivity
+import androidx.constraintlayout.widget.ConstraintLayout
 import kotlinx.android.synthetic.main.activity_bullet_text.*
 
 
@@ -21,10 +22,13 @@ class BulletActivity : AppCompatActivity() {
 
     private var animator: ObjectAnimator? = null
     private var showControlView = true
+    private var settingsBean: SettingsBean? = SettingsBean(5000, 600, "#ffffff")
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_bullet_text)
+
+        initLayoutParams()
 
         initAnimator()
 
@@ -33,10 +37,25 @@ class BulletActivity : AppCompatActivity() {
         observeEvent()
     }
 
+    private fun initLayoutParams() {
+        textView?.apply {
+            rotation = 90f
+            translationX =
+                -(resources.displayMetrics.heightPixels - resources.displayMetrics.widthPixels) / 2f
+            layoutParams = ConstraintLayout.LayoutParams(
+                resources.displayMetrics.heightPixels,
+                ConstraintLayout.LayoutParams.MATCH_CONSTRAINT
+            ).apply {
+                topToTop = ConstraintLayout.LayoutParams.PARENT_ID
+                bottomToBottom = ConstraintLayout.LayoutParams.PARENT_ID
+            }
+        }
+    }
+
     private fun initAnimator() {
         animator = ObjectAnimator.ofFloat(
             textView, "dx",
-            resources.displayMetrics.widthPixels * 1f,
+            resources.displayMetrics.heightPixels * 1f,
             -textView.getTextWidth()
         ).apply {
             interpolator = LinearInterpolator()
@@ -58,21 +77,9 @@ class BulletActivity : AppCompatActivity() {
             override fun afterTextChanged(s: Editable?) {
                 textView?.text = s.toString()
                 animator?.setFloatValues(
-                    resources.displayMetrics.widthPixels * 1f,
+                    resources.displayMetrics.heightPixels * 1f,
                     -textView.getTextWidth()
                 )
-                val inputTextLength = s.toString().length
-                when {
-                    inputTextLength < 3 -> {
-                        animator?.duration = 2000
-                    }
-                    inputTextLength < 5 -> {
-                        animator?.duration = 3000
-                    }
-                    else -> {
-                        animator?.duration = 5000
-                    }
-                }
                 animator?.start()
             }
         })
@@ -80,12 +87,32 @@ class BulletActivity : AppCompatActivity() {
 
     private fun observeEvent() {
         textView?.setOnClickListener {
-            if (showControlView) {
-                mEtInput.visibility = View.GONE
-            } else {
-                mEtInput.visibility = View.VISIBLE
-            }
-            showControlView = !showControlView
+            toggleControlViewVisibility()
         }
+
+        mIvSettings?.setOnClickListener {
+            toggleControlViewVisibility()
+            val dialog = SettingsDialog.newInstance(settingsBean)
+            dialog.listener = {
+                settingsBean = it
+                textView?.textSize = it?.size?.toFloat() ?: 600f
+                animator?.duration = it?.duration?.toLong() ?: 5000
+                animator?.setFloatValues(
+                    resources.displayMetrics.heightPixels * 1f,
+                    -textView.getTextWidth()
+                )
+                animator?.start()
+            }
+            dialog.show(supportFragmentManager)
+        }
+    }
+
+    private fun toggleControlViewVisibility() {
+        if (showControlView) {
+            mEtInput.visibility = View.GONE
+        } else {
+            mEtInput.visibility = View.VISIBLE
+        }
+        showControlView = !showControlView
     }
 }

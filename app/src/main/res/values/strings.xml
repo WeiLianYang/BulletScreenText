@@ -1,7 +1,11 @@
 <resources>
-    <string name="app_name">BulletScreenText</string>
+    <string name="app_name">撩友神器</string>
     <string name="text_cool">闪炫</string>
     <string name="text_bullet">弹幕</string>
 
     <string name="text_hint">输入要展示的文本</string>
+    <string name="text_confirm">确定</string>
+    <string name="text_speed">速度</string>
+    <string name="text_size">字号</string>
+    <string name="text_color">颜色</string>
 </resources>
