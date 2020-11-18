@@ -1,6 +1,7 @@
 package com.william.bulletscreen
 
 import android.os.Parcelable
+import androidx.annotation.ColorInt
 import kotlinx.android.parcel.Parcelize
 
 
@@ -10,4 +11,4 @@ import kotlinx.android.parcel.Parcelize
  * Class Comment：
  */
 @Parcelize
-data class SettingsBean(var duration: Int, var size: Int, var color: String) : Parcelable
+data class SettingsBean(var duration: Int, var size: Int, @ColorInt var color: Int) : Parcelable

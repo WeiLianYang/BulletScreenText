@@ -2,6 +2,7 @@ package com.william.bulletscreen
 
 import android.animation.ObjectAnimator
 import android.animation.ValueAnimator
+import android.graphics.Color
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -22,7 +23,7 @@ class BulletActivity : AppCompatActivity() {
 
     private var animator: ObjectAnimator? = null
     private var showControlView = true
-    private var settingsBean: SettingsBean? = SettingsBean(5000, 600, "#ffffff")
+    private var settingsBean: SettingsBean? = SettingsBean(5000, 600, Color.WHITE)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -95,6 +96,7 @@ class BulletActivity : AppCompatActivity() {
             val dialog = SettingsDialog.newInstance(settingsBean)
             dialog.listener = {
                 settingsBean = it
+                textView?.textColor = it?.color ?: Color.WHITE
                 textView?.textSize = it?.size?.toFloat() ?: 600f
                 animator?.duration = it?.duration?.toLong() ?: 5000
                 animator?.setFloatValues(

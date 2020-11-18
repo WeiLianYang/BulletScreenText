@@ -19,6 +19,10 @@
         <activity
             android:name=".BulletActivity"
             android:theme="@style/AppTheme_Bullet" />
+
+        <activity
+            android:name=".CoolActivity"
+            android:theme="@style/AppTheme_Fullscreen" />
     </application>
 
 </manifest>

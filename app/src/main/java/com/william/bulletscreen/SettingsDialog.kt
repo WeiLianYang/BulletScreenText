@@ -1,12 +1,9 @@
 package com.william.bulletscreen
 
-import android.content.DialogInterface
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import android.util.Log
 import android.view.*
-import android.widget.SeekBar
 import androidx.fragment.app.DialogFragment
 import androidx.fragment.app.FragmentManager
 import kotlinx.android.synthetic.main.dialog_settings.*
@@ -59,43 +56,31 @@ class SettingsDialog : DialogFragment() {
         super.onViewCreated(view, savedInstanceState)
 
         mDurationSeekBar?.progress = bean?.duration ?: 5000
-        mDurationSeekBar?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-            }
-
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-            }
-
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                bean?.duration = seekBar?.progress ?: 5000
-                Log.d("onStopTrackingTouch", "duration: ${seekBar?.progress}")
-            }
-        })
-
         mSizeSeekBar?.progress = bean?.size ?: 600
-        mSizeSeekBar?.setOnSeekBarChangeListener(object : SeekBar.OnSeekBarChangeListener {
-            override fun onProgressChanged(seekBar: SeekBar?, progress: Int, fromUser: Boolean) {
-            }
 
-            override fun onStartTrackingTouch(seekBar: SeekBar?) {
-            }
+        mTvConfirm?.setOnClickListener {
+            bean?.duration = mDurationSeekBar?.progress ?: 5000
+            bean?.size = mSizeSeekBar?.progress ?: 600
+            listener?.invoke(bean)
+            dismiss()
+        }
 
-            override fun onStopTrackingTouch(seekBar: SeekBar?) {
-                bean?.size = seekBar?.progress ?: 600
-                Log.d("onStopTrackingTouch", "size: ${seekBar?.progress}")
+        mRadioGroup?.setOnCheckedChangeListener { _, checkedId ->
+            when (checkedId) {
+                R.id.rb_white -> bean?.color = Color.WHITE
+                R.id.rb_red -> bean?.color = Color.RED
+                R.id.rb_orange -> bean?.color = Color.parseColor("#ffff8800")
+                R.id.rb_yellow -> bean?.color = Color.YELLOW
+                R.id.rb_green -> bean?.color = Color.GREEN
+                R.id.rb_cyan -> bean?.color = Color.CYAN
+                R.id.rb_blue -> bean?.color = Color.BLUE
+                R.id.rb_purple -> bean?.color = Color.parseColor("#ffaa66cc")
             }
-        })
-
-        mTvConfirm?.setOnClickListener { dismiss() }
+        }
     }
 
     fun show(manager: FragmentManager) {
         super.show(manager, javaClass.simpleName)
-    }
-
-    override fun onDismiss(dialog: DialogInterface) {
-        super.onDismiss(dialog)
-        listener?.invoke(bean)
     }
 
     var listener: ((bean: SettingsBean?) -> Unit)? = null

@@ -15,6 +15,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        mButtonCool?.setOnClickListener {
+            startActivity(Intent(this, CoolActivity::class.java))
+        }
+
         mButtonBullet?.setOnClickListener {
             startActivity(Intent(this, BulletActivity::class.java))
         }
