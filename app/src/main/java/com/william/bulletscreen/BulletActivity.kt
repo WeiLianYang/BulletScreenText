@@ -117,4 +117,9 @@ class BulletActivity : AppCompatActivity() {
         }
         showControlView = !showControlView
     }
+
+    override fun onDestroy() {
+        animator?.cancel()
+        super.onDestroy()
+    }
 }
