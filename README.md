@@ -9,6 +9,7 @@
 ![弹幕动图](screenshot/text.gif) ![弹幕设置动图](screenshot/settings.gif)
 
 <br>
+
 ### 已完成的功能：
 - [x] 1. 可自行输入文本
 - [x] 2. 可设置字体移动速度
