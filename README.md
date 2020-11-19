@@ -4,9 +4,9 @@
 
 ### 效果预览：
 
-![首页动图](screenshot/home.gif) ![闪炫动图](screenshot/cool.gif)
+![首页动图](https://img-blog.csdnimg.cn/20201119105952210.gif) ![闪炫动图](https://img-blog.csdnimg.cn/2020111911005310.gif)
 <br>
-![弹幕动图](screenshot/text.gif) ![弹幕设置动图](screenshot/settings.gif)
+![弹幕动图](https://img-blog.csdnimg.cn/20201119110127684.gif) ![弹幕设置动图](https://img-blog.csdnimg.cn/20201119110210690.gif)
 
 <br>
 
