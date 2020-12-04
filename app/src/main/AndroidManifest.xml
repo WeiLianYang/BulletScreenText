@@ -18,11 +18,18 @@
 
         <activity
             android:name=".BulletActivity"
-            android:theme="@style/AppTheme_Bullet" />
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme_Black" />
 
         <activity
             android:name=".CoolActivity"
+            android:launchMode="singleTop"
             android:theme="@style/AppTheme_Fullscreen" />
+
+        <activity
+            android:name=".DazzleActivity"
+            android:launchMode="singleTop"
+            android:theme="@style/AppTheme_Black" />
     </application>
 
 </manifest>

@@ -3,12 +3,19 @@
 
     <string name="text_title">相信自己就是那个最靓的仔</string>
 
-    <string name="text_cool">闪炫</string>
+    <string name="text_cool">闪酷</string>
     <string name="text_bullet">弹幕</string>
+    <string name="text_dazzle">炫彩</string>
 
     <string name="text_hint">输入要展示的文本</string>
     <string name="text_confirm">确定</string>
     <string name="text_speed">速度</string>
     <string name="text_size">字号</string>
     <string name="text_color">颜色</string>
+
+    <string name="text_hint1">我</string>
+    <string name="text_hint2">好️</string>
+    <string name="text_hint3">😍</string>
+    <string name="text_hint4">你</string>
+    <string name="text_hint5">!️</string>
 </resources>

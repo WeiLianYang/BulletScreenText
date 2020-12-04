@@ -31,8 +31,8 @@
 
     <Button
         android:id="@+id/mButtonCool"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginBottom="20dp"
         android:background="@drawable/shape_circle_primary"
         android:elevation="20dp"
@@ -46,8 +46,8 @@
 
     <Button
         android:id="@+id/mButtonBullet"
-        android:layout_width="80dp"
-        android:layout_height="80dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
         android:layout_marginTop="20dp"
         android:background="@drawable/shape_circle_black"
         android:elevation="20dp"
@@ -55,8 +55,21 @@
         android:textColor="@android:color/white"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintRight_toLeftOf="@+id/mButtonCool"
+        app:layout_constraintTop_toBottomOf="@+id/guide_center" />
+
+    <Button
+        android:id="@+id/mButtonDazzle"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/gradient_circle"
+        android:elevation="20dp"
+        android:text="@string/text_dazzle"
+        android:textColor="@android:color/white"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/mButtonCool"
         app:layout_constraintTop_toBottomOf="@+id/guide_center" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

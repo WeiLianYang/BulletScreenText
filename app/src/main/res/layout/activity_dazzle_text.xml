@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <com.william.bulletscreen.DazzleColourTextView
+        android:id="@+id/mDazzleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <TextView
+        android:id="@+id/tv_size"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginTop="25dp"
+        android:text="@string/text_size"
+        android:textColor="@android:color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <SeekBar
+        android:id="@+id/mSizeSeekBar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="15dp"
+        android:max="1000"
+        android:maxHeight="2dp"
+        android:min="100"
+        android:minHeight="2dp"
+        android:progress="400"
+        android:progressDrawable="@drawable/seek_progress"
+        android:thumb="@drawable/seek_thumb"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/tv_size"
+        app:layout_constraintTop_toTopOf="@+id/tv_size" />
+
+    <HorizontalScrollView
+        android:id="@+id/mHsColorView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="10dp"
+        app:layout_constraintBottom_toTopOf="@+id/mEtInput1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <RadioGroup
+            android:id="@+id/mRadioGroup"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_white"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@android:color/white" />
+
+            <RadioButton
+                android:id="@+id/rb_red"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="#FF0000" />
+
+            <RadioButton
+                android:id="@+id/rb_orange"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/holo_orange_dark" />
+
+            <RadioButton
+                android:id="@+id/rb_yellow"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="#FFFF00" />
+
+            <RadioButton
+                android:id="@+id/rb_green"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="#00FF00" />
+
+            <RadioButton
+                android:id="@+id/rb_cyan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="#00FFFF" />
+
+            <RadioButton
+                android:id="@+id/rb_blue"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="#0000FF" />
+
+            <RadioButton
+                android:id="@+id/rb_purple"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="15dp"
+                android:background="@android:color/holo_purple" />
+
+        </RadioGroup>
+    </HorizontalScrollView>
+
+    <EditText
+        android:id="@+id/mEtInput1"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/shape_darker_gray"
+        android:gravity="center"
+        android:hint="@string/text_hint1"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColor="@android:color/white"
+        android:textColorHint="@android:color/white"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/mEtInput2"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/mEtInput2"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_darker_gray"
+        android:gravity="center"
+        android:hint="@string/text_hint2"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColor="#FF0000"
+        android:textColorHint="#FF0000"
+        app:layout_constraintBottom_toBottomOf="@+id/mEtInput1"
+        app:layout_constraintEnd_toStartOf="@+id/mEtInput3"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/mEtInput1"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/mEtInput3"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_darker_gray"
+        android:gravity="center"
+        android:hint="@string/text_hint3"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColor="@android:color/holo_orange_dark"
+        android:textColorHint="@android:color/holo_orange_dark"
+        app:layout_constraintBottom_toBottomOf="@+id/mEtInput1"
+        app:layout_constraintEnd_toStartOf="@+id/mEtInput4"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/mEtInput2"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/mEtInput4"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_darker_gray"
+        android:gravity="center"
+        android:hint="@string/text_hint4"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColor="#00FF00"
+        android:textColorHint="#00FF00"
+        app:layout_constraintBottom_toBottomOf="@+id/mEtInput1"
+        app:layout_constraintEnd_toStartOf="@+id/mEtInput5"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/mEtInput3"
+        tools:ignore="RtlSymmetry" />
+
+    <EditText
+        android:id="@+id/mEtInput5"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:background="@drawable/shape_darker_gray"
+        android:gravity="center"
+        android:hint="@string/text_hint5"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textColor="#0000FF"
+        android:textColorHint="#0000FF"
+        app:layout_constraintBottom_toBottomOf="@+id/mEtInput1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_chainStyle="spread"
+        app:layout_constraintHorizontal_weight="1"
+        app:layout_constraintStart_toEndOf="@+id/mEtInput4"
+        tools:ignore="RtlSymmetry" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/mGroupControl"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="tv_size,mSizeSeekBar,mEtInput1,mEtInput2,mEtInput3,mEtInput4,mEtInput5,mHsColorView" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

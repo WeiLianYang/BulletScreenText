@@ -11,7 +11,7 @@
         <item name="android:windowFullscreen">true</item>
     </style>
 
-    <style name="AppTheme_Bullet" parent="AppTheme_Fullscreen">
+    <style name="AppTheme_Black" parent="AppTheme_Fullscreen">
         <item name="android:background">@android:color/black</item>
     </style>
 

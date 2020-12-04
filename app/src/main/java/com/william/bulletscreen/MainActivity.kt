@@ -22,5 +22,9 @@ class MainActivity : AppCompatActivity() {
         mButtonBullet?.setOnClickListener {
             startActivity(Intent(this, BulletActivity::class.java))
         }
+
+        mButtonDazzle?.setOnClickListener {
+            startActivity(Intent(this, DazzleActivity::class.java))
+        }
     }
 }
