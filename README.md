@@ -4,10 +4,11 @@
 
 ### 效果预览：
 
-![首页动图](https://img-blog.csdnimg.cn/20201119105952210.gif) ![闪炫动图](https://img-blog.csdnimg.cn/2020111911005310.gif)
+![首页动图](https://img-blog.csdnimg.cn/20201204223224498.gif) ![闪炫动图](https://img-blog.csdnimg.cn/2020111911005310.gif)
 <br>
 ![弹幕动图](https://img-blog.csdnimg.cn/20201119110127684.gif) ![弹幕设置动图](https://img-blog.csdnimg.cn/20201119110210690.gif)
-
+<br>
+![炫彩设置](https://img-blog.csdnimg.cn/20201204223352909.gif) ![炫彩效果](https://img-blog.csdnimg.cn/20201204223427845.gif)
 <br>
 
 ### 已完成的功能：
