@@ -1,6 +1,6 @@
 # BulletScreenText
 
-[![API](https://img.shields.io/badge/API-26%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=26) [![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://github.com/WeiLianYang/AndroidToolkit/blob/main/LICENSE)
+[![API](https://img.shields.io/badge/API-23%2B-brightgreen.svg?style=flat)](https://android-arsenal.com/api?level=23) [![License](https://img.shields.io/badge/License%20-Apache%202-337ab7.svg)](https://github.com/WeiLianYang/BulletScreenText/blob/main/LICENSE)
 
 ## 🔥🔥🔥 一款好玩的弹幕神器，可以用来 撩 小哥哥 或 小姐姐 哦
 <br>
